@@ -4,7 +4,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 const isProd = process.env.NODE_ENV === 'production';
-const cssDev = ['style.loader', 'css-loader', 'sass-loader'];
+const cssDev = ['style-loader', 'css-loader', 'sass-loader'];
 const cssProd = ExtractTextPlugin.extract({
 	fallback: 'style-loader',
 	use: ['css-loader', 'sass-loader']
@@ -39,7 +39,9 @@ module.exports = {
 				template: './src/index.html'
 		}),
 		new ExtractTextPlugin({
-			filename: './styles/style.css'
+			filename: './styles/style.css',
+			disable: !isProd,
+			allChunks: true
 		})
 	]
 }
