@@ -4,20 +4,27 @@ export class Campers extends React.Component {
 	constructor(props) {
 		super(props);
 
-		this.handleData = this.handleData.bind(this);
+		this.createItem = this.createItem.bind(this);
 	}
 
-	handleData() {
-		const tempData = (this.props.recentList).map(obj => {
-			<li>obj.username</li>
+	createItem(prop) {
+		return prop.map((camper, i) => {
+			// return <li>{camper.username}</li>
+			return (
+				<tr>
+					<td>{i}</td>
+					<td>{camper.username}</td>
+					<td>{camper.recent}</td>
+					<td>{camper.alltime}</td>
+				</tr>
+			)
 		});
-		console.log(tempData);
-		return tempData;
 	}
 
 	render() {
 		return(
-			<ul>{this.handleData()}</ul>
+			// <ul>{this.createItem(this.props.recentList)}</ul>
+			<tbody>{this.createItem(this.props.recentList)}</tbody>
 		);
 	}
 }

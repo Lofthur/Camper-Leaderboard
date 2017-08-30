@@ -16,8 +16,20 @@ import { Campers } from './Campers';
 export function Leaderboard(props) {
 	return (
 		<div>
-			<h2>This is from Leaderboard as a function statement</h2>
-			<Campers recentList={props.recentList} topList={props.topList} />
+			<table>
+				<thead>
+					<tr>
+						<th>Leaderboard</th>
+					</tr>
+					<tr>
+						<th>#</th>
+						<th>Camper Name</th>
+						<th>Points in last 30 days</th>
+						<th>All time points</th>
+					</tr>
+				</thead>	
+				<Campers recentList={props.recentList} />
+			</table>
 		</div>
 	);
 }

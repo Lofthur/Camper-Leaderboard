@@ -27,7 +27,6 @@ class App extends React.Component {
 	render() {
 		return(
 			<div>
-				<h1>Hello again sir</h1>
 				 <Leaderboard recentList={this.state.recentList} />
 			</div>
 		);
