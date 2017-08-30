@@ -11,21 +11,16 @@ class App extends React.Component {
 		super(props);
 
 		this.state = {
-			recentList: [],
-			topList: []
+			recentList: [],	
 		}
-
-		this.componentDidMount = this.componentDidMount.bind(this);
 	}
 
 	componentDidMount() {
 		fetch(recentUrl)
 			.then(resp => resp.json())
-			.then(function(data) {
-				console.log(data);
-				this.setState({
-					recentList: data
-				})
+			.then(data => {
+				this.setState({recentList: data})
+				console.log(this.state.recentList[0].username);
 			});
 	}
 
@@ -33,7 +28,7 @@ class App extends React.Component {
 		return(
 			<div>
 				<h1>Hello again sir</h1>
-				 <Leaderboard recentList={this.state.recentList} topList={this.state.topList} />
+				 <Leaderboard recentList={this.state.recentList} />
 			</div>
 		);
 	}
