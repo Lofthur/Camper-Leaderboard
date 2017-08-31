@@ -9,11 +9,10 @@ export class Campers extends React.Component {
 
 	createItem(prop) {
 		return prop.map((camper, i) => {
-			// return <li>{camper.username}</li>
 			return (
-				<tr>
-					<td>{i}</td>
-					<td>{camper.username}</td>
+				<tr key={i}>
+					<td>{i + 1}</td>
+					<td><img src={camper.img} />{camper.username}</td>
 					<td>{camper.recent}</td>
 					<td>{camper.alltime}</td>
 				</tr>
@@ -23,8 +22,7 @@ export class Campers extends React.Component {
 
 	render() {
 		return(
-			// <ul>{this.createItem(this.props.recentList)}</ul>
-			<tbody>{this.createItem(this.props.recentList)}</tbody>
+			<tbody>{this.createItem(this.props.list)}</tbody>
 		);
 	}
 }

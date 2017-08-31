@@ -4,30 +4,41 @@ import style from './style/app.sass';
 import { Leaderboard } from './components/Leaderboard';
 
 const recentUrl = 'https://fcctop100.herokuapp.com/api/fccusers/top/recent';
-const topUrl = 'https://fcctop100.herokuapp.com/api/fccusers/top/alltime';
 
 class App extends React.Component {
 	constructor(props) {
 		super(props);
 
 		this.state = {
-			recentList: [],	
+			showList: []
 		}
+		
+		this.updateShowList = this.updateShowList.bind(this);
 	}
 
 	componentDidMount() {
 		fetch(recentUrl)
 			.then(resp => resp.json())
 			.then(data => {
-				this.setState({recentList: data})
-				console.log(this.state.recentList[0].username);
+				this.setState({showList: data});
 			});
 	}
+
+	updateShowList(url) {
+		fetch(url)
+			.then(resp => resp.json())
+			.then(data => {
+				this.setState({
+					showList: data
+				})
+			})
+	}
+
 
 	render() {
 		return(
 			<div>
-				 <Leaderboard recentList={this.state.recentList} />
+				 <Leaderboard list={this.state.showList} updateShowList={this.updateShowList}/>
 			</div>
 		);
 	}
