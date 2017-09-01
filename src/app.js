@@ -12,7 +12,7 @@ class App extends React.Component {
 		this.state = {
 			showList: []
 		}
-		
+
 		this.updateShowList = this.updateShowList.bind(this);
 	}
 
@@ -37,7 +37,8 @@ class App extends React.Component {
 
 	render() {
 		return(
-			<div>
+			<div className="container">
+				<h1 className="header">Leaderboard</h1>
 				 <Leaderboard list={this.state.showList} updateShowList={this.updateShowList}/>
 			</div>
 		);

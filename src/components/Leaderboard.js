@@ -31,13 +31,11 @@ export class Leaderboard extends React.Component {
 	render() {
 		return (
 			<div>
-				<table>
+				<table className="leaderboard-table">
 					<thead>
 						<tr>
-							<th>Leaderboard</th>
-						</tr>
-						<tr>
-							<th>#</th>
+							<th className="table-header">#</th>
+							<th></th>
 							<th>Camper Name</th>
 							<th><a href="#"  id="recent" data-url="https://fcctop100.herokuapp.com/api/fccusers/top/recent" onClick={this.handleClick}>Points in last 30 days &#9662;</a></th>
 							<th><a href="#" id="top" data-url="https://fcctop100.herokuapp.com/api/fccusers/top/alltime" onClick={this.handleClick}>All time points</a></th>

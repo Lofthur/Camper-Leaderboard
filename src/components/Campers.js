@@ -10,9 +10,10 @@ export class Campers extends React.Component {
 	createItem(prop) {
 		return prop.map((camper, i) => {
 			return (
-				<tr key={i}>
+				<tr key={i} className="camper">
 					<td>{i + 1}</td>
-					<td><img src={camper.img} />{camper.username}</td>
+					<td className="img-container"><img src={camper.img} /></td>
+					<td>{camper.username}</td>
 					<td>{camper.recent}</td>
 					<td>{camper.alltime}</td>
 				</tr>
@@ -22,7 +23,7 @@ export class Campers extends React.Component {
 
 	render() {
 		return(
-			<tbody>{this.createItem(this.props.list)}</tbody>
+			<tbody className="table-body">{this.createItem(this.props.list)}</tbody>
 		);
 	}
 }

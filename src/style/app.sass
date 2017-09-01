@@ -1,2 +1,53 @@
+@import url(https://fonts.googleapis.com/css?family=Encode+Sans)
+
+$font-stack: 'Encode Sans', sans-serif
+$primary-color: #1C3A54
+$header-color: #55B0FF
+$board-background-one: #A1D3FF
+$board-background-two: #55B0FF
+
 body
-	background: pink
+	background: $primary-color
+	color: $primary-color
+	font-family: $font-stack
+
+img
+	height: 30px
+	width: 30px
+	border-radius: 50%
+
+a
+	color: $primary-color
+	&:visited
+		color: $primary-color 
+
+.container
+	max-width: 900px
+	margin: 0 auto
+	background: $board-background-two
+
+.header
+	text-align: center
+	background: $header-color
+	padding-top: 20px
+
+.leaderboard-table
+	background: $board-background-one
+	width: 100%
+	border-spacing: 0
+
+.table-header
+	padding: 20px 0
+	
+
+.table-body
+	text-align: center
+	background: $board-background-two
+	tr 
+		&:nth-child(even)
+			background: $board-background-one
+
+.img-container
+	display: flex
+	justify-content: center
+	padding: 5px 0
