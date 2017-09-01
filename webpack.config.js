@@ -39,7 +39,7 @@ module.exports = {
 				template: './src/index.html'
 		}),
 		new ExtractTextPlugin({
-			filename: './styles/style.css',
+			filename: 'styles/style.css',
 			disable: !isProd,
 			allChunks: true
 		})
