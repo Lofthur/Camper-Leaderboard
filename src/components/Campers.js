@@ -8,16 +8,17 @@ export class Campers extends React.Component {
 	}
 
 	createItem(prop) {
+		const link = 'https://www.freecodecamp.com';
 		return prop.map((camper, i) => {
 			return (
 				<tr key={i} className="camper">
 					<td>{i + 1}</td>
 					<td className="img-container"><img src={camper.img} /></td>
-					<td>{camper.username}</td>
+					<td><a className="name-tag" href={link + '\/' + camper.username} target="_blank">{camper.username}</a></td>
 					<td>{camper.recent}</td>
 					<td>{camper.alltime}</td>
 				</tr>
-			)
+			);
 		});
 	}
 
